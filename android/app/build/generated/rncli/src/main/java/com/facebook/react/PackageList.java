@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-linear-gradient
 import com.BV.LinearGradient.LinearGradientPackage;
+// react-native-pager-view
+import com.reactnativepagerview.PagerViewPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -68,6 +70,7 @@ public class PackageList {
       new MainReactPackage(mConfig),
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
+      new PagerViewPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new VectorIconsPackage()

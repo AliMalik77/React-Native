@@ -1,39 +1,30 @@
-import React from 'react';
-import {Pressable, View, Text, StyleSheet} from 'react-native';
+import React from "react";
+import { Pressable, View, Text, StyleSheet } from "react-native";
 
-function Home({navigation}) {
+function Home({ navigation }) {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Welcome to our Home Screen</Text>
-
-      {/* <Pressable
-        onPress={() => navigation.navigate('SignIn')}
-        style={{
-          backgroundColor: 'plum',
-          marginBottom: 10,
-          marginTop: 10,
-          padding: 10,
-        }}>
-        <Text>SignIn</Text>
-      </Pressable> */}
       <Pressable
-        onPress={() => navigation.navigate('Story')}
+        onPress={() => navigation.navigate("Story")}
         style={{
-          backgroundColor: 'plum',
+          backgroundColor: "plum",
           marginBottom: 10,
           marginTop: 10,
           padding: 10,
-        }}>
+        }}
+      >
         <Text>Story</Text>
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate('ContactUS')}
+        onPress={() => navigation.navigate("ContactUS")}
         style={{
-          backgroundColor: 'plum',
+          backgroundColor: "plum",
           padding: 10,
           marginBottom: 10,
           marginTop: 10,
-        }}>
+        }}
+      >
         <Text>Contact Us</Text>
       </Pressable>
 
@@ -46,7 +37,7 @@ function Home({navigation}) {
 
 const styles = StyleSheet.create({
   footer: {
-    position: 'absolute',
+    position: "absolute",
 
     bottom: 30,
   },
