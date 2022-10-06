@@ -1,28 +1,30 @@
-import React from "react";
-// import "react-native-gesture-handler";
-import { Pressable, View, Text } from "react-native";
+import React, { useEffect, useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-// import { createStackNavigator } from "@react-navigation/stack";
-// import Home from './src/screens/Home';
-// import Story from './src/screens/Story';
-// import Contact from './src/screens/Contact';
-// import SignInScreen from './src/screens/SignIn';
-// import AuthStack from './src/navigation/AuthStack';
 import AppStack from "./src/navigation/AppStack";
 import AuthStack from "./src/navigation/AuthStack";
-import { Provider } from "react-redux";
 import SplashScreen from "./src/screens/SplashScreen";
 import TabNavigation from "./src/navigation/TabNavigation";
 import TopNavigator from "./src/navigation/TopNavigation";
-// import DrawerNavigator from "./src/navigation/DrawerNavigation";
-
-const isSignedIn = false;
 
 function App() {
-  console.log("Hi testing");
+  // let isSignedIn = auth().currentUser;
+  const [isSignedIn, setSignedIn] = useState(null);
+
+  // if (authData.uid) {
+  // let signout = auth().signOut();
+  // let authData = auth().currentUser;
+  // console.log("current user test", authData.uid);
+  // } else {
+  //   console.log("no login user available");
+  // }
+
   return (
     <NavigationContainer>
-      {isSignedIn ? <TopNavigator /> : <SplashScreen />}
+      {isSignedIn ? (
+        <TabNavigation />
+      ) : (
+        <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
+      )}
     </NavigationContainer>
   );
 }

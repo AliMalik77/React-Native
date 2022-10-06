@@ -1,18 +1,8 @@
 import React from "react";
-import {
-  Pressable,
-  View,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
 import LinearGradient from "react-native-linear-gradient";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 const SplashScreen = ({ navigation }) => {
   return (

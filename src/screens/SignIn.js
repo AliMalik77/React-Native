@@ -1,40 +1,62 @@
-import React, { useContext, useState } from "react";
-import {
-  Pressable,
-  View,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-} from "react-native";
-import { authContext } from "../../App";
+import React, { useState } from "react";
+import { View, TextInput, Button, StyleSheet } from "react-native";
+import auth from "@react-native-firebase/auth";
 
-function SignInScreen({ navigate }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+function SignInScreen({ isSignedIn, setSignedIn }) {
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [confirm, setConfirm] = useState(null);
+  const [code, setCode] = useState("");
 
-  console.log("testing signin");
+  const confirmCode = async () => {
+    try {
+      await confirm.confirm(code);
+      setSignedIn(true);
+      // alert("login success");
+    } catch (error) {
+      console.log("Invalid code.");
+    }
+  };
+
+  const signInWithPhoneNumber = async (phoneNumber) => {
+    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
+    // const currentUser = await auth().currentUser;
+    setConfirm(confirmation);
+  };
+
+  if (!confirm) {
+    return (
+      <View style={styles.container}>
+        <TextInput
+          style={styles.input}
+          placeholder="Enter Phone Number with Country code"
+          value={phoneNumber}
+          onChangeText={(phoneNumber) => setPhoneNumber(phoneNumber)}
+        />
+        <Button
+          title="Phone Number Sign In"
+          onPress={() => signInWithPhoneNumber("+923054042027")}
+        />
+      </View>
+    );
+  }
   return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+    <View style={styles.container}>
       <TextInput
         style={styles.input}
-        placeholder="Username"
-        value={username}
-        onChangeText={(username) => setUsername(username)}
+        value={code}
+        onChangeText={(text) => setCode(text)}
       />
-      <TextInput
-        placeholder="Password"
-        style={styles.input}
-        value={password}
-        onChangeText={(password) => setPassword(password)}
-        secureTextEntry
-      />
-      {/* <Button title="Sign in" onPress={() => signIn({username, password})} /> */}
+      <Button title="Confirm Code" onPress={() => confirmCode()} />
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   input: {
     height: 40,
     width: "100%",

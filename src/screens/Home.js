@@ -38,7 +38,6 @@ function Home({ navigation }) {
 const styles = StyleSheet.create({
   footer: {
     position: "absolute",
-
     bottom: 30,
   },
 });
