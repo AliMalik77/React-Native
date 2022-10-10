@@ -22,7 +22,7 @@ function SignInScreen({ isSignedIn, setSignedIn, navigation }) {
   };
 
   const signInWithPhoneNumber = async (phoneNumber) => {
-    const confirmation = await auth().signInWithPhoneNumber("+923201484476");
+    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
     // const currentUser = await auth().currentUser;
     setConfirm(confirmation);
   };
