@@ -5,6 +5,7 @@ import AuthStack from "./src/navigation/AuthStack";
 import SplashScreen from "./src/screens/SplashScreen";
 import TabNavigation from "./src/navigation/TabNavigation";
 import TopNavigator from "./src/navigation/TopNavigation";
+import auth from "@react-native-firebase/auth";
 
 function App() {
   // let isSignedIn = auth().currentUser;

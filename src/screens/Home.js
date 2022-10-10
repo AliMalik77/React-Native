@@ -5,7 +5,7 @@ function Home({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Welcome to our Home Screen</Text>
-      <Pressable
+      {/* <Pressable
         onPress={() => navigation.navigate("Story")}
         style={{
           backgroundColor: "plum",
@@ -26,6 +26,17 @@ function Home({ navigation }) {
         }}
       >
         <Text>Contact Us</Text>
+      </Pressable> */}
+      <Pressable
+        onPress={() => navigation.navigate("Splash")}
+        style={{
+          backgroundColor: "plum",
+          padding: 10,
+          marginBottom: 10,
+          marginTop: 10,
+        }}
+      >
+        <Text>Splash</Text>
       </Pressable>
 
       <View style={styles.footer}>
