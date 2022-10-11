@@ -22,7 +22,7 @@ function App() {
 
   return (
     <NavigationContainer>
-      {!isSignedIn ? (
+      {isSignedIn ? (
         <TabNavigation />
       ) : (
         <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
