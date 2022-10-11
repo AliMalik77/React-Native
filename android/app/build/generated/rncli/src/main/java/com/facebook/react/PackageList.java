@@ -21,6 +21,8 @@ import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 // react-native-pager-view
 import com.reactnativepagerview.PagerViewPackage;
+// react-native-reanimated
+import com.swmansion.reanimated.ReanimatedPackage;
 // react-native-safe-area-context
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
 // react-native-screens
@@ -77,6 +79,7 @@ public class PackageList {
       new RNGestureHandlerPackage(),
       new LinearGradientPackage(),
       new PagerViewPackage(),
+      new ReanimatedPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),
       new VectorIconsPackage()

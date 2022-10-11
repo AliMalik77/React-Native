@@ -6,6 +6,7 @@ import SplashScreen from "./src/screens/SplashScreen";
 import TabNavigation from "./src/navigation/TabNavigation";
 import TopNavigator from "./src/navigation/TopNavigation";
 import auth from "@react-native-firebase/auth";
+import DrawerNavigation from "./src/navigation/DrawerNavigation";
 
 function App() {
   // let isSignedIn = auth().currentUser;
@@ -21,7 +22,7 @@ function App() {
 
   return (
     <NavigationContainer>
-      {isSignedIn ? (
+      {!isSignedIn ? (
         <TabNavigation />
       ) : (
         <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />

@@ -38,23 +38,6 @@
                     }
                 },
                 {
-                    "source": "/home/alimalik/.gradle/caches/transforms-3/bd0132704e0e7d36cbd43628c3622b83/transformed/core-1.6.0/res/values-in/values-in.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "5503",
-                        "endColumns": "100",
-                        "endOffsets": "5599"
-                    }
-                },
-                {
                     "source": "/home/alimalik/.gradle/caches/transforms-3/2a02c39380d7980eef47a0c33393fa6a/transformed/browser-1.4.0/res/values-in/values-in.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -69,6 +52,23 @@
                         "startOffsets": "5010,5110,5208,5317",
                         "endColumns": "99,97,108,100",
                         "endOffsets": "5105,5203,5312,5413"
+                    }
+                },
+                {
+                    "source": "/home/alimalik/.gradle/caches/transforms-3/c23be72df72f6588fd6c047004c4b48f/transformed/core-1.7.0/res/values-in/values-in.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "5503",
+                        "endColumns": "100",
+                        "endOffsets": "5599"
                     }
                 },
                 {
