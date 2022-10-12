@@ -26,12 +26,10 @@ const Drawer = createDrawerNavigator();
 
 const DrawerNavigation = () => {
   return (
-    // <NavigationContainer>
     <Drawer.Navigator initialRouteName="Home">
       <Drawer.Screen name="Home" component={HomeScreen} />
       <Drawer.Screen name="Notifications" component={NotificationsScreen} />
     </Drawer.Navigator>
-    // </NavigationContainer>
   );
 };
 
