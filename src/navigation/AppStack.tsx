@@ -8,18 +8,12 @@ import SplashScreen from "../screens/SplashScreen";
 
 const Stack = createStackNavigator();
 
-// type AuthProps = {
-//   isSignedIn: string;
-//   setSignedIn: (val: string) => void;
-// };
-
 const AppStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
       <Stack.Screen name="Story" component={Story} />
       <Stack.Screen name="ContactUS" component={Contact} />
-      {/* <Stack.Screen name="SignIn" component={SignInScreen} /> */}
       <Stack.Screen name="Splash" component={SplashScreen} />
     </Stack.Navigator>
   );

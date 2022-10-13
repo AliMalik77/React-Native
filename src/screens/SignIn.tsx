@@ -13,11 +13,6 @@ type AuthProps = {
   navigation: any;
 };
 
-// interface ConfirmationResult {
-//   verificationId: string | null;
-//   confirm(verificationCode: string): Promise<null>;
-// }
-
 const SignInScreen = ({ isSignedIn, setSignedIn, navigation }: AuthProps) => {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [confirm, setConfirm] = useState<any | null>(null);
@@ -25,21 +20,8 @@ const SignInScreen = ({ isSignedIn, setSignedIn, navigation }: AuthProps) => {
 
   const confirmCode = async () => {
     try {
-      // const credential = auth.PhoneAuthProvider.credential(
-      //   confirm.verificationId,
-      //   code
-      // );
       console.log("verification is ", confirm);
       await confirm.confirm(code);
-      // console.log("code is ", confirm.confirm(code));
-      // const credential: any = auth.PhoneAuthProvider.credential(
-      //   confirm.verificationId,
-      //   code
-      // );
-
-      // if (confirm && confirm.confirm() === code) {
-      // console.log("code is matched");
-      // await confirm.confirm(code);
       setSignedIn("true");
     } catch (error) {
       console.log("Invalid code.");

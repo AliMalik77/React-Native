@@ -1,7 +1,11 @@
 import React from "react";
 import { Pressable, View, Text, StyleSheet } from "react-native";
 
-function Home({ navigation }) {
+type HomeScreenProps = {
+  navigation: any;
+};
+
+function Home({ navigation }: HomeScreenProps) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Welcome to our Home Screen</Text>

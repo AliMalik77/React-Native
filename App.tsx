@@ -11,19 +11,14 @@ import DrawerNavigation from "./src/navigation/DrawerNavigation";
 const App = () => {
   // let isSignedIn = auth().currentUser;
   const [isSignedIn, setSignedIn] = useState("");
-
   // if (authData.uid) {
   // let signout = auth().signOut();
   // let authData = auth().currentUser;
-  // console.log("current user test", authData.uid);
-  // } else {
-  //   console.log("no login user available");
-  // }
 
   return (
     <NavigationContainer>
-      {isSignedIn ? (
-        <TabNavigation />
+      {!isSignedIn ? (
+        <DrawerNavigation />
       ) : (
         <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
       )}

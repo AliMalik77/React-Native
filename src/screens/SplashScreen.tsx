@@ -4,7 +4,12 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import LinearGradient from "react-native-linear-gradient";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-const SplashScreen = ({ navigation }) => {
+
+type SplashScreenProps = {
+  navigation: any;
+};
+
+const SplashScreen = ({ navigation }: SplashScreenProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.header}>

@@ -36,7 +36,6 @@ const TabNavigation = () => {
               />
             );
           },
-          // tabBarBadge: 1,
         }}
       />
     </Tab.Navigator>
