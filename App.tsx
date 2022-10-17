@@ -17,8 +17,8 @@ const App = () => {
 
   return (
     <NavigationContainer>
-      {!isSignedIn ? (
-        <DrawerNavigation />
+      {isSignedIn ? (
+        <TabNavigation />
       ) : (
         <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
       )}
