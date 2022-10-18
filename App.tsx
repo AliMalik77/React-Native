@@ -9,6 +9,15 @@ import auth from "@react-native-firebase/auth";
 import DrawerNavigation from "./src/navigation/DrawerNavigation";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
+import DropdownComponent from "./src/components/Dropdown";
+import Home from "./src/screens/Home";
+import Search from "./src/screens/Search";
+
+//Api for user serach
+// https://api.github.com/search/users?q=AliMalik77
+
+//Api for repo search
+//https://api.github.com/search/repositories?q=Address-Book
 
 const App = () => {
   // let isSignedIn = auth().currentUser;
@@ -18,15 +27,15 @@ const App = () => {
   // let authData = auth().currentUser;
 
   return (
-    <Provider store={store}>
-      <NavigationContainer>
-        {!isSignedIn ? (
-          <TabNavigation />
-        ) : (
-          <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
-        )}
-      </NavigationContainer>
-    </Provider>
+    // <Provider store={store}>
+    <NavigationContainer>
+      {!isSignedIn ? (
+        <Search />
+      ) : (
+        <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
+      )}
+    </NavigationContainer>
+    // </Provider>
   );
 };
 

@@ -24,9 +24,6 @@ function SettingsScreen() {
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
       />
-      {/* <button aria-label="Increment value" onClick={() => dispatch(Login())}>
-        Increment
-      </button> */}
 
       <Text>Settings!</Text>
     </View>
