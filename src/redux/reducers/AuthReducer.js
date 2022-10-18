@@ -15,6 +15,7 @@ const initialState = {
 const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case IS_LOADING:
+      console.log("i am loading");
       return {
         ...state,
         isLoading: true,
@@ -31,6 +32,9 @@ const authReducer = (state = initialState, action) => {
         authError: action.error.message,
         isLoading: false,
       };
+
+    default:
+      return state;
   }
 };
 

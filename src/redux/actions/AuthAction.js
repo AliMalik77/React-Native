@@ -7,6 +7,7 @@ import {
 } from "../types/AuthType";
 
 export const Login = () => {
+  console.log("logging in reducer");
   return (dispatch) => {
     try {
       dispatch({ type: IS_LOADING });

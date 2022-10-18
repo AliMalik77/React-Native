@@ -7,6 +7,8 @@ import TabNavigation from "./src/navigation/TabNavigation";
 import TopNavigator from "./src/navigation/TopNavigation";
 import auth from "@react-native-firebase/auth";
 import DrawerNavigation from "./src/navigation/DrawerNavigation";
+import { Provider } from "react-redux";
+import store from "./src/redux/store";
 
 const App = () => {
   // let isSignedIn = auth().currentUser;
@@ -16,13 +18,15 @@ const App = () => {
   // let authData = auth().currentUser;
 
   return (
-    <NavigationContainer>
-      {isSignedIn ? (
-        <TabNavigation />
-      ) : (
-        <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
-      )}
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        {!isSignedIn ? (
+          <TabNavigation />
+        ) : (
+          <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
+        )}
+      </NavigationContainer>
+    </Provider>
   );
 };
 
