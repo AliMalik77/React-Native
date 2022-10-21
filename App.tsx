@@ -27,15 +27,15 @@ const App = () => {
   // let authData = auth().currentUser;
 
   return (
-    // <Provider store={store}>
-    <NavigationContainer>
-      {!isSignedIn ? (
-        <Search />
-      ) : (
-        <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
-      )}
-    </NavigationContainer>
-    // </Provider>
+    <Provider store={store}>
+      <NavigationContainer>
+        {!isSignedIn ? (
+          <Search />
+        ) : (
+          <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
+        )}
+      </NavigationContainer>
+    </Provider>
   );
 };
 

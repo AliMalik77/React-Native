@@ -1,15 +1,32 @@
-import React from "react";
-import { StyleSheet, View } from "react-native";
+import React, { useState } from "react";
+import { Alert, StyleSheet, View } from "react-native";
 import { Searchbar } from "react-native-paper";
+import { useDispatch } from "react-redux";
+import { setSearchQuery } from "../redux/actions/AuthAction";
 
 const SearchBar = () => {
+  const dispatch: any = useDispatch();
+  const [search, setSearch] = useState("");
+
+  const handleChange = (data: any) => {
+    console.log("data is ", data);
+    setSearch(data);
+  };
+
+  const handleButton = () => {
+    console.log("handle button is called");
+    dispatch(setSearchQuery(search));
+  };
+
   return (
     <Searchbar
       // style={styles.search}
       placeholder="Search"
-      //   onChangeText={onChangeSearch}
+      onChangeText={handleChange}
       // value={searchQuery}
-      value=""
+      value={search}
+      // onIconPress={() => handleButton()}
+      onSubmitEditing={() => handleButton()}
     />
   );
 };
