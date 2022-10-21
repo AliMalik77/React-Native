@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { View, Text, Button } from "react-native";
 import { useSelector, useDispatch } from "react-redux";
-import { Login } from "../redux/actions/AuthAction";
+import { login } from "../redux/actions/AuthAction";
 // import
 
 function SettingsScreen() {
@@ -19,14 +19,11 @@ function SettingsScreen() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Button
-        onPress={() => dispatch(Login())}
+        onPress={() => dispatch(login())}
         title="Login"
         color="#841584"
         accessibilityLabel="Learn more about this purple button"
       />
-      {/* <button aria-label="Increment value" onClick={() => dispatch(Login())}>
-        Increment
-      </button> */}
 
       <Text>Settings!</Text>
     </View>
