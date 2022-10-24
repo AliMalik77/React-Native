@@ -3,6 +3,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import Contact from "../screens/Contact";
 import SettingsScreen from "../screens/Settings";
+import Search from "../screens/Search";
+import RepoSearch from "../screens/RepoSearch";
 
 const Tab = createBottomTabNavigator();
 
@@ -10,27 +12,27 @@ const TabNavigation = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="Contact"
-        component={Contact}
+        name="User"
+        component={Search}
         options={{
-          tabBarLabel: "Contact",
+          tabBarLabel: "User",
           tabBarIcon: () => {
             return (
-              <MaterialCommunityIcons name="contacts" size={30} color="red" />
+              <MaterialCommunityIcons name="account" size={30} color="red" />
             );
           },
-          tabBarBadge: 3,
+          // tabBarBadge: 3,
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Repository"
+        component={RepoSearch}
         options={{
-          tabBarLabel: "Settings",
+          tabBarLabel: "Repository",
           tabBarIcon: () => {
             return (
               <MaterialCommunityIcons
-                name="cog-outline"
+                name="folder-open-outline"
                 size={30}
                 color="red"
               />

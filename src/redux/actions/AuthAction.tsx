@@ -32,7 +32,7 @@ export const searchType = (data: string) => {
   };
 };
 
-export const setSearchQuery = (data: string) => {
+export const setSearchQuery = (data: string | null) => {
   console.log("in setSearchQuery", data);
 
   return (dispatch: any) => {
@@ -45,6 +45,6 @@ export const setSearchQuery = (data: string) => {
   };
 };
 
-export const getUserData = async (user: string) => {
+export const getUserData = async (user: null | string) => {
   console.log("user to be searchhed is ", user);
 };
