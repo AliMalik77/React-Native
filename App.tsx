@@ -30,7 +30,7 @@ const App = () => {
     <Provider store={store}>
       <NavigationContainer>
         {!isSignedIn ? (
-          <Search />
+          <TabNavigation />
         ) : (
           <AuthStack isSignedIn={isSignedIn} setSignedIn={setSignedIn} />
         )}

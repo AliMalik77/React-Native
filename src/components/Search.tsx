@@ -15,15 +15,16 @@ const SearchBar = () => {
 
   const handleButton = () => {
     console.log("handle button is called");
-    dispatch(setSearchQuery(search));
+    console.log("search length is ", search.length);
+    if (search.length > 0) {
+      dispatch(setSearchQuery(search));
+    }
   };
 
   return (
     <Searchbar
-      // style={styles.search}
       placeholder="Search"
       onChangeText={handleChange}
-      // value={searchQuery}
       value={search}
       // onIconPress={() => handleButton()}
       onSubmitEditing={() => handleButton()}
