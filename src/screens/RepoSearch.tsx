@@ -26,24 +26,30 @@ const RepoSearch = ({ navigation }: SearchScreenProps) => {
   const searchData = useSelector((state: any) => state.auth.search);
   const typeSearch = useSelector((state: any) => state.auth.type);
   const state = useSelector((state: any) => state);
+  const [search, setSearch] = useState<any>();
 
   console.log("states get from ", state);
 
   const [cards, setCards] = useState<any[]>([]);
   const dispatch: any = useDispatch();
 
-  const handleSearchData = async () => {
-    console.log("handleSearchData is called", searchData);
-    const queryStr = `https://api.github.com/search/repositories?q=${searchData}`;
+  useEffect(() => {
     if (searchData !== null) {
-      const getData = await axios.get(queryStr);
-      console.log("repositories with this name is  ", getData.data.items);
-      setCards(getData.data.items);
+      const queryStr = `https://api.github.com/search/repositories?q=${searchData}`;
+      axios.get(queryStr).then((res) => {
+        // console.log("repositories with this name is  ", res.data.items);
+        setCards(res.data.items);
+      });
+    }
+  }, [searchData]);
+
+  const handleSearchData = async () => {
+    if (search.length > 0) {
+      dispatch(setSearchQuery(search));
     }
   };
 
   const handleBack = () => {
-    console.log("handleBack is called");
     setCards([]);
     dispatch(setSearchQuery(null));
   };
@@ -63,7 +69,7 @@ const RepoSearch = ({ navigation }: SearchScreenProps) => {
           </View>
 
           <View style={styles.dropdown}>
-            <SearchBar />
+            <SearchBar search={search} setSearch={setSearch} />
           </View>
           <View style={styles.button}>
             <TouchableOpacity onPress={() => handleSearchData()}>
@@ -80,7 +86,6 @@ const RepoSearch = ({ navigation }: SearchScreenProps) => {
         <>
           <View>
             <FlatList
-              //   style={{ flex: 0 }}
               data={cards}
               keyExtractor={(item) => item.id}
               renderItem={({ item }) => {
@@ -135,7 +140,6 @@ const styles = StyleSheet.create({
   },
   header: {
     marginBottom: 50,
-    // backgroundColor: "red",
     alignItems: "center",
   },
   textSize: {

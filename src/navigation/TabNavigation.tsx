@@ -1,12 +1,12 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import Contact from "../screens/Contact";
-import SettingsScreen from "../screens/Settings";
 import Search from "../screens/Search";
 import RepoSearch from "../screens/RepoSearch";
 
 const Tab = createBottomTabNavigator();
+
+// #70CABB
 
 const TabNavigation = () => {
   return (
@@ -18,7 +18,7 @@ const TabNavigation = () => {
           tabBarLabel: "User",
           tabBarIcon: () => {
             return (
-              <MaterialCommunityIcons name="account" size={30} color="red" />
+              <MaterialCommunityIcons name="account" size={30} color="black" />
             );
           },
           // tabBarBadge: 3,
@@ -34,7 +34,7 @@ const TabNavigation = () => {
               <MaterialCommunityIcons
                 name="folder-open-outline"
                 size={30}
-                color="red"
+                color="black"
               />
             );
           },
