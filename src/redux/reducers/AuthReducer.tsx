@@ -40,29 +40,24 @@ const authReducer = (state = initialState, action: any) => {
         isLoading: false,
       };
     case TYPE_SUCCESS:
-      console.log("action data is ", action.data);
       return {
         ...state,
         type: action.data,
         isLoading: false,
       };
     case TYPE_ERROR:
-      console.log("action in type error ", action);
-
       return {
         ...state,
         isLoading: false,
         typeError: action,
       };
     case SEARCH_SUCCESS:
-      console.log("action data SEARCH ", action.data);
       return {
         ...state,
         search: action.data,
         isLoading: false,
       };
     case SEARCH_ERROR:
-      console.log("action in SEARCH type error ", action);
       return {
         ...state,
         isLoading: false,

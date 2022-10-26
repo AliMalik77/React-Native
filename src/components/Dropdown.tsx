@@ -4,7 +4,6 @@ import DropDownPicker from "react-native-dropdown-picker";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { useDispatch, useSelector } from "react-redux";
 import { searchType } from "../redux/actions/AuthAction";
-// import { ViewPropTypes } from "deprecated-react-native-prop-types";
 const DropdownComponent = () => {
   console.log("in dropdown");
   const dispatch: any = useDispatch();
@@ -12,13 +11,12 @@ const DropdownComponent = () => {
   const type = useSelector((state: any) => state);
 
   const handleDropdown = (type: string) => {
-    console.log("type change is ", type);
     dispatch(searchType(type));
   };
 
-  useEffect(() => {
-    console.log("i am changes again", type);
-  }, [type]);
+  // useEffect(() => {
+  //   console.log("i am changes again", type);
+  // }, [type]);
 
   return (
     <View>
@@ -45,14 +43,13 @@ const DropdownComponent = () => {
         ]}
         // defaultValue={this.state.country}
         containerStyle={{ height: 40 }}
-        style={styles.dropdown}
+        // style={styles.dropdown}
         // style={{ backgroundColor: "#fafafa" }}
         itemStyle={{
           justifyContent: "flex-start",
         }}
         dropDownStyle={{ backgroundColor: "#fafafa" }}
         onChangeItem={(item) => {
-          console.log("item current value is ", item.value);
           handleDropdown(item.value);
         }}
       />
@@ -66,10 +63,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: "center",
-    // bottom: 30,
-  },
-  dropdown: {
-    // borderColor: "black",
-    // backgroundColor: "#fff",
   },
 });

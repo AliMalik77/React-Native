@@ -1,24 +1,13 @@
-import React, { useState } from "react";
-import { Alert, StyleSheet, View } from "react-native";
+import React from "react";
+import { StyleSheet } from "react-native";
 import { Searchbar } from "react-native-paper";
 import { useDispatch } from "react-redux";
-import { setSearchQuery } from "../redux/actions/AuthAction";
 
-const SearchBar = () => {
+const SearchBar = ({ search, setSearch, handleButton }: any) => {
   const dispatch: any = useDispatch();
-  const [search, setSearch] = useState("");
 
   const handleChange = (data: any) => {
-    console.log("data is ", data);
     setSearch(data);
-  };
-
-  const handleButton = () => {
-    console.log("handle button is called");
-    console.log("search length is ", search.length);
-    if (search.length > 0) {
-      dispatch(setSearchQuery(search));
-    }
   };
 
   return (
@@ -26,8 +15,9 @@ const SearchBar = () => {
       placeholder="Search"
       onChangeText={handleChange}
       value={search}
+      style={styles.search}
       // onIconPress={() => handleButton()}
-      onSubmitEditing={() => handleButton()}
+      // onSubmitEditing={() => handleButton()}
     />
   );
 };
@@ -35,8 +25,8 @@ const SearchBar = () => {
 export default SearchBar;
 
 const styles = StyleSheet.create({
-  // search: {
-  //   borderRadius: 5,
-  //   borderColor: "black",
-  // },
+  search: {
+    borderRadius: 50,
+    borderColor: "black",
+  },
 });

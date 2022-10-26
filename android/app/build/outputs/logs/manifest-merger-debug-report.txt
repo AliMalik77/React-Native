@@ -5,6 +5,7 @@ INJECTED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidMa
 INJECTED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidManifest.xml:1:1-26:12
 INJECTED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidManifest.xml:1:1-26:12
 MERGED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidManifest.xml:1:1-26:12
+MERGED from [:react-native-flipper] /home/alimalik/Android/React-Native/node_modules/react-native-flipper/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-10:12
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/alimalik/.gradle/caches/transforms-3/0b1ec2c07973cfa5079dd71e2b1acd9d/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/alimalik/.gradle/caches/transforms-3/ef5b53ebe7475f292be9ba95523469ae/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /home/alimalik/.gradle/caches/transforms-3/e19cd2b853644e9dd281998ede9d424c/transformed/jetified-flipper-fresco-plugin-0.125.0/AndroidManifest.xml:8:1-15:12
@@ -245,6 +246,8 @@ uses-sdk
 INJECTED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidManifest.xml
 INJECTED from /home/alimalik/Android/React-Native/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-flipper] /home/alimalik/Android/React-Native/node_modules/react-native-flipper/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
+MERGED from [:react-native-flipper] /home/alimalik/Android/React-Native/node_modules/react-native-flipper/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/alimalik/.gradle/caches/transforms-3/0b1ec2c07973cfa5079dd71e2b1acd9d/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/alimalik/.gradle/caches/transforms-3/0b1ec2c07973cfa5079dd71e2b1acd9d/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.125.0] /home/alimalik/.gradle/caches/transforms-3/ef5b53ebe7475f292be9ba95523469ae/transformed/jetified-flipper-network-plugin-0.125.0/AndroidManifest.xml:11:5-13:41

@@ -22,15 +22,26 @@ const Search = ({ navigation }: SearchScreenProps) => {
   const searchData = useSelector((state: any) => state.auth.search);
   const typeSearch = useSelector((state: any) => state.auth.type);
   const [cards, setCards] = useState<any[]>([]);
+  const [search, setSearch] = useState<any>();
   const dispatch: any = useDispatch();
+
+  useEffect(() => {
+    if (searchData !== null) {
+      const queryStr = `https://api.github.com/search/users?q=${searchData}`;
+      // const getData = await axios.get(queryStr);
+      axios.get(queryStr).then((res) => {
+        console.log("data from axios in user is ", res.data);
+        setCards(res.data.items);
+      });
+    }
+  }, [searchData]);
 
   const handleSearchData = async () => {
     console.log("handleSearchData user is called");
-    if (searchData !== null) {
-      const queryStr = `https://api.github.com/search/users?q=${searchData}`;
-      const getData = await axios.get(queryStr);
-      console.log("data from axios in user is ", getData.data);
-      setCards(getData.data.items);
+    console.log("handle button is called");
+    console.log("search length is ", search.length);
+    if (search.length > 0) {
+      dispatch(setSearchQuery(search));
     }
   };
 
@@ -39,6 +50,7 @@ const Search = ({ navigation }: SearchScreenProps) => {
     setCards([]);
     dispatch(setSearchQuery(null));
   };
+
   return (
     <>
       {!cards.length ? (
@@ -54,7 +66,7 @@ const Search = ({ navigation }: SearchScreenProps) => {
           </View>
 
           <View style={styles.dropdown}>
-            <SearchBar />
+            <SearchBar search={search} setSearch={setSearch} />
           </View>
           <View style={styles.button}>
             <TouchableOpacity onPress={() => handleSearchData()}>
@@ -103,19 +115,6 @@ const Search = ({ navigation }: SearchScreenProps) => {
               )}
             />
           </View>
-          {/* {cards.map(
-            (card, index) => (
-              console.log("card data is ", card, typeSearch),
-              (
-                <CardComponent
-                  data={card}
-                  type={typeSearch}
-                  key={index}
-                  setCards={setCards}
-                />
-              )
-            )
-          )} */}
         </View>
       )}
     </>

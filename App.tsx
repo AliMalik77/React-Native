@@ -12,6 +12,8 @@ import store from "./src/redux/store";
 import DropdownComponent from "./src/components/Dropdown";
 import Home from "./src/screens/Home";
 import Search from "./src/screens/Search";
+import { NativeBaseProvider, useColorMode } from "native-base";
+import { customTheme } from "./src/components/ColorTheme";
 
 //Api for user serach
 // https://api.github.com/search/users?q=AliMalik77
@@ -22,11 +24,16 @@ import Search from "./src/screens/Search";
 const App = () => {
   // let isSignedIn = auth().currentUser;
   const [isSignedIn, setSignedIn] = useState("");
+  const { colorMode, toggleColorMode } = useColorMode();
+
+  const isDarkMode = colorMode === "dark";
+
   // if (authData.uid) {
   // let signout = auth().signOut();
   // let authData = auth().currentUser;
 
   return (
+    // <NativeBaseProvider theme={customTheme}>
     <Provider store={store}>
       <NavigationContainer>
         {!isSignedIn ? (
@@ -36,6 +43,7 @@ const App = () => {
         )}
       </NavigationContainer>
     </Provider>
+    // </NativeBaseProvider>
   );
 };
 
